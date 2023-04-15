@@ -1,0 +1,208 @@
+* {
+  font-size: 20px;
+  font-family: "League Spartan", sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(288, 48%, 96%);
+  height: 98vh;
+}
+
+img {
+  height: 30px;
+  width: 30px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-top: 2vh;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+p {
+  margin: 1vh 1vw;
+}
+
+h4 {
+  color: red;
+  padding: 0;
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+h5 {
+  font-size: 1.1em;
+  color: hsl(145, 63%, 49%);
+  margin: 0;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  min-width: 300px;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  background: hsl(240, 65%, 90%);
+  border-radius: 10px;
+  border: 2px;
+  border-style: solid;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  min-width: 300px;
+  max-width: 800px;
+  height: 75vh;
+  background: hsl(240, 65%, 90%);
+  margin-top: 3vh;
+  border-radius: 10px;
+  border: 2px;
+  border-style: solid;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1vh;
+}
+
+input {
+  height: 30px;
+  border-radius: 10px;
+  width: 40vw;
+  max-width: 400px;
+  min-width: 200px;
+  padding: 3px 7px;
+  background-color: hsl(288, 48%, 96%);
+}
+
+textarea {
+  height: 20vh;
+  max-height: 120px;
+  width: 50vw;
+  max-width: 500px;
+  min-width: 230px;
+  padding: 15px 15px;
+  border-radius: 5px;
+  background-color: hsl(288, 48%, 96%);
+}
+
+.contenedorbotones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin-top: 2vh;
+  width: 40vw;
+  max-width: 400px;
+  min-width: 250px;
+  height: 50px;
+  background: hsl(240, 65%, 90%);
+}
+
+.botones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: hsl(240, 40%, 81%);
+}
+
+.spinner {
+  margin: 20px auto 0;
+  width: 70px;
+  text-align: center;
+}
+
+.spinnerhidden {
+  visibility: hidden;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 650px) {
+  .formulario {
+    height: 90vh;
+  }
+
+  section {
+    height: 110vh;
+  }
+}
