@@ -3,7 +3,6 @@ const email = {
   asunto: "",
   descripcion: "",
 };
-
 //Variables del documento
 const correo = document.querySelector(`.correo`);
 const asunto = document.querySelector(`.asunto`);
@@ -12,20 +11,17 @@ const enviar = document.querySelector(`.enviar`);
 const vaciar = document.querySelector(`.vaciar`);
 const spinner = document.querySelector(`#spinner`);
 const formulario = document.querySelector(`.formulario`);
-
 //registramos con blur cuando se hace click en un input y se sale de el, para correo, asunto y descripcion
-
 correo.addEventListener(`blur`, generarAlerta);
 asunto.addEventListener(`blur`, generarAlerta);
 descripcion.addEventListener(`blur`, generarAlerta);
-
 //funcion para insertar alertas
 function generarAlerta(e) {
   const alerta = document.createElement(`H4`);
   // con alerta check es una variable que si la clase alerta no existe sera null y la podemos utilizar para ver si existe una alerta en ese input
   const alertacheck = e.target.parentElement.querySelector(`.alerta`);
   const ubicacionalerta = e.target.parentElement;
-  // con el siguiente condicional verificamos si la clase "alerta" ya existe en el html, no hay que colocar ninguna condicion pues el if lo entiende directamente ya que es un boolean
+  // con el siguiente condicional verificamos si la clase "alerta" ya existe en el html, no hay que colocar ninguna condicion pues el if lo entiende directamente ya que es un boolean, si existe la removemos para evitar multiples alertas
   if (alertacheck) {
     alertacheck.remove();
   }
@@ -46,7 +42,6 @@ function generarAlerta(e) {
   alerta.classList.add(`alerta`);
   // almacenamos la informacion sumistrada por el usuario en un objeto, ya que parece conveniente tener el ticket del usuario almacenado así, el id que se usa esta en el html
   email[e.target.id] = e.target.value.trim().toLowerCase();
-
   habilitarBoton();
 }
 // Para comprobar el email se utiliza una expresion regular, estas se googlean, existen para codigos postales, emails, numeros telefonicos, etc
@@ -55,11 +50,9 @@ function comprobarEmail(email) {
   const resultado = regex.test(email);
   return resultado;
 }
-
 //tambien registramos click en los botones enviar y vaciar
 enviar.addEventListener(`click`, clickEnviar);
 vaciar.addEventListener(`click`, clickVaciar);
-
 function clickVaciar(e) {
   // vaciamos los inputs
   correo.value = "";
@@ -70,7 +63,6 @@ function clickVaciar(e) {
   email.asunto = "";
   email.descripcion = "";
 }
-
 //La logica para habilitar el boton es, si no hay alertas y no hay inputs vacios habilita el boton, else mantenlo deshabilitado
 function habilitarBoton() {
   const alertacheck = document.querySelector(`.alerta`);
